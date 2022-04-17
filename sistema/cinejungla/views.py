@@ -40,7 +40,7 @@ def registrar_sala(request):
     if formulario.is_valid():
         formulario.save()
         return redirect('consultar_sala')
-    return render(request, 'vistas/registrar_sala.html', {'formulario': formulario}, {'multiplexs': multiplexs})
+    return render(request, 'vistas/registrar_sala.html', {'formulario': formulario, 'multiplexs': multiplexs})
 
 def registrar_usuario(request):
     multiplexs = Multiplex.objects.all()
@@ -48,5 +48,5 @@ def registrar_usuario(request):
     if formulario.is_valid():
         formulario.save()
         return redirect('registrar_usuario')
-    return render(request, 'vistas/registrar_usuario.html', {'formulario': formulario}, {'multiplexs': multiplexs})
+    return render(request, 'vistas/registrar_usuario.html', {'formulario': formulario,'multiplexs': multiplexs})
 

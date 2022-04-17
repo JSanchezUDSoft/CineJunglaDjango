@@ -1,19 +1,17 @@
 {% extends "menus/menu_admin.html" %}
 {% block titulo %} Consultar salas {% endblock %}
 {% block contenido %}
-<section class="full-width header-well">
-    <div class="full-width header-well-icon">
-        <i class="zmdi zmdi-cast"></i>
-    </div>
-    <div class="full-width header-well-text">
-        <p class="text-condensedLight">
-            Salas
-        </p>
-    </div>
-</section>
 <div class="full-width divider-menu-h"></div>
 <div class="mdl-grid">
     <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
+        <div class="full-width header-well-icon">
+            <i class="zmdi zmdi-cast"></i>
+        </div>
+        <div class="full-width header-well-text">
+            <p class="text-condensedLight">
+                Salas
+            </p>
+        </div>
         <div class="table-responsive">
             <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width table-responsive">
                 <thead>
@@ -24,26 +22,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!--{% for sala in salas %}
-                    <tr>
-                        <td class="mdl-data-table__cell--non-numeric">{{ sala.k_sala }}</td>
-                        <td class="mdl-data-table__cell--non-numeric">{{ sala.n_sala }}</td>
-                        <td class="mdl-data-table__cell--non-numeric">{{ multiplex.n_multiplex }}</td>
-                    </tr>
-                        {% for multiplex in multiplexs %}
-                            {% if multiplex.k_multiplex and sala.k_multiplex %}
-                                {{ multiplex.n_multiplex }}
-                            {% endif %}
-                            <tr>
-                                <td class="mdl-data-table__cell--non-numeric">{{ sala.k_sala }}</td>
-                                <td class="mdl-data-table__cell--non-numeric">{{ sala.n_sala }}</td>
-                                <td class="mdl-data-table__cell--non-numeric">{{ multiplex.n_multiplex }}</td>
-                            </tr>
-                        {% endfor %}
-                    {% endfor %}-->
                     {% for sala in salas %}
                         {% for multiplex in multiplexs %}
-                            {% if multiplex.k_multiplex == sala.k_multiplex %}
+                            {% if multiplex.k_multiplex == sala.k_multiplex_id %}
                                 <tr>
                                     <td class="mdl-data-table__cell--non-numeric">{{ sala.k_sala }}</td>
                                     <td class="mdl-data-table__cell--non-numeric">{{ sala.n_sala }}</td>

@@ -17,35 +17,35 @@
 						</div>
 						<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input class="mdl-textfield__input" type="number" pattern="-?[0-9]*([0-9])?" id="identificacion" name="identificacion">
+								<input class="mdl-textfield__input" type="number" pattern="-?[0-9]*([0-9])?" id="identificacion" name="k_identificacion">
 								<label class="mdl-textfield__label" for="DNICompany">Número de identificación</label>
 								<span class="mdl-textfield__error">Invalid DNI</span>
 							</div>
 						</div>
 						<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="nombreEmpleado" name="nombre">
+								<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="nombreEmpleado" name="n_nombre">
 								<label class="mdl-textfield__label" for="NameCompany">Nombre</label>
 								<span class="mdl-textfield__error">Invalid name</span>
 							</div>
 						</div>
 						<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="telefono" name="celular">
+								<input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="telefono" name="t_celular">
 								<label class="mdl-textfield__label" for="phoneCompany">Teléfono</label>
 								<span class="mdl-textfield__error">Invalid phone number</span>
 							</div>
 						</div>
 						<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input class="mdl-textfield__input" type="number" id="salario" name="salario">
+								<input class="mdl-textfield__input" type="number" id="salario" name="v_salario">
 								<label class="mdl-textfield__label" for="NameCompany">Salario</label>
 								<span class="mdl-textfield__error">Salario incorrecto</span>
 							</div>
 						</div>
 						<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<select name="id_multiplex" id="idMultiplex" class="mdl-textfield__input">
+								<select name="k_multiplex_id" id="idMultiplex" class="mdl-textfield__input">
 									<option value="">Seleccione el multiplex</option>
 									{% for multiplex in multiplexs %}
 									<option value="{{multiplex.k_multiplex}}">{{multiplex.n_multiplex}}</option>
@@ -55,7 +55,7 @@
 						</div>
 						<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<select name="rol" id="rol" class="mdl-textfield__input">
+								<select name="i_rol" id="rol" class="mdl-textfield__input">
 									<option value="">Seleccione el rol</option>
 									<option value="">Cajero</option>
 									<option value="">Director</option>
@@ -65,13 +65,13 @@
 						<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 								<label class="" for="NameCompany">Seleccione la fecha de contratación</label>
-								<input class="mdl-textfield__input" type="date" id="fechaContrato" name="fechaContrato">
+								<input class="mdl-textfield__input" type="date" id="fechaContrato" name="f_contrato">
 								<span class="mdl-textfield__error">Invalid name</span>
 							</div>
 						</div>
 						<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<select name="cargo" id="rol" class="mdl-textfield__input">
+								<select name="i_cargo" id="rol" class="mdl-textfield__input">
 									<option value="">Seleccione el cargo</option>
 									<option value="">Director</option>
 									<option value="">Cajero</option>
@@ -83,14 +83,14 @@
 						</div>
 						<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="contrasena" name="contrasena">
+								<input class="mdl-textfield__input" type="password" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="contrasena" name="o_contrasena">
 								<label class="mdl-textfield__label" for="NameCompany">Contraseña</label>
 								<span class="mdl-textfield__error">Invalid password</span>
 							</div>
 						</div>
 					</div>
 					<p class="text-center">
-						<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addFuncion">
+						<button type="submit" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addFuncion">
 							<i class="zmdi zmdi-plus"></i>
 						</button>
 						<div class="mdl-tooltip" for="btn-addCompany">Registrar empleado</div>
