@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 from django.conf import settings
@@ -11,4 +11,4 @@ urlpatterns = [
     path('sala', views.consultar_sala, name='consultar_sala'),
     path('sala/registrar', views.registrar_sala, name='registrar_sala'),
     path('usuario', views.registrar_usuario, name='registrar_usuario'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]

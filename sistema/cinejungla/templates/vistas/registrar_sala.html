@@ -9,7 +9,8 @@
 				Nueva sala
 			</div>
 			<div class="full-width panel-content">
-				<form>
+				<form enctype="multipart/form-data" method="post">
+					{% csrf_token %}
 					<div class="mdl-grid">
 						<div class="mdl-cell mdl-cell--12-col">
 							<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; DATOS DE LA SALA</legend><br>
@@ -18,19 +19,22 @@
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 								<select name="k_multiplex" id="idMultiplex" class="mdl-textfield__input">
 									<option value="">Seleccione el multiplex</option>
+									{% for multiplex in multiplexs %}
+									<option value="{{multiplex.k_multiplex}}">{{multiplex.n_multiplex}}</option>
+									{% endfor %}
 								</select>
 							</div>
 						</div>
 						<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-								<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="nombreSala" name="nombreSala">
+								<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="nombreSala" name="n_sala">
 								<label class="mdl-textfield__label" for="NameCompany">Nombre de la sala</label>
 								<span class="mdl-textfield__error">Invalid name</span>
 							</div>
 						</div>
 					</div>
 					<p class="text-center">
-						<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addFuncion">
+						<button type="submit" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addFuncion">
 							<i class="zmdi zmdi-plus"></i>
 						</button>
 						<div class="mdl-tooltip" for="btn-addCompany">Registrar sala</div>

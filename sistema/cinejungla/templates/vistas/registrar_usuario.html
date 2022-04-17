@@ -9,7 +9,8 @@
 				Nuevo empleado
 			</div>
 			<div class="full-width panel-content">
-				<form>
+				<form enctype="multipart/form-data" method="post">
+					{% csrf_token %}
 					<div class="mdl-grid">
 						<div class="mdl-cell mdl-cell--12-col">
 							<legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; DATOS DEL EMPLEADO</legend><br>
