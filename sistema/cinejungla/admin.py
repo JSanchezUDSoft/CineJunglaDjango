@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Multiplex, Usuario, Sala
 
-# Register your models here.
+admin.site.register(Multiplex)
+admin.site.register(Usuario)
+admin.site.register(Sala)

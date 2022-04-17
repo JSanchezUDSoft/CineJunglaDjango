@@ -46,6 +46,9 @@
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 								<select name="id_multiplex" id="idMultiplex" class="mdl-textfield__input">
 									<option value="">Seleccione el multiplex</option>
+									{% for multiplex in multiplexs %}
+									<option value="{{multiplex.k_multiplex}}">{{multiplex.n_multiplex}}</option>
+									{% endfor %}
 								</select>
 							</div>
 						</div>
