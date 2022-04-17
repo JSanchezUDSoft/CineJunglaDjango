@@ -29,7 +29,7 @@
 				<i class="zmdi zmdi-account-circle"></i>
 			</p>
 			<p class="text-center text-condensedLight">BIENVENIDO A CINE JUNGLA</p>
-			<form enctype="multipart/form-data" method="post">
+			<form action="{% url 'registrar_multiplex' %}" method>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				    <input class="mdl-textfield__input" type="text" id="username" name="username">
 				    <label class="mdl-textfield__label" for="userName">Cedula</label>

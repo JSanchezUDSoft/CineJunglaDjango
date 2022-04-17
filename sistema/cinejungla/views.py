@@ -6,17 +6,7 @@ from .forms import RegistrarMultiplexForm, RegistrarUsuarioForm, RegistrarSalaFo
 
 # Create your views here.
 def index(request):
-    multiplexs = Multiplex.objects.all()
-    formulario = RegistrarSalaForm(request.POST or None, request.FILES or None)
-    if formulario.is_valid():
-        formulario.save()
-        return redirect('consultar_sala')
-    return render(request, 'vistas/registrar_sala.html', {'formulario': formulario, 'multiplexs': multiplexs})
-    #return render(request, 'vistas/registrar_multiplex.html')        
-
-'''def login(request):
-    datos = Usuario.objects.all()
-    return render(request, 'vistas/registrar_multiplex.html', {'data': datos})'''
+    return render(request, 'vistas/index.html')        
 
 def consultar_multiplex(request):
     multiplex = Multiplex.objects.all()
